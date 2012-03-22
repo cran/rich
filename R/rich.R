@@ -14,7 +14,7 @@ function(matrix, verbose=FALSE, nrandom=NULL)
 	s.moy.boot<-mean(matrice.AS.boot$t)
 	s.boot.corr<-2*matrice.AS.boot$t0 - s.moy.boot
 	bias<-s.moy.boot-matrice.AS.boot$t0
-	stddev.valboot<-sd(matrice.AS.boot$t) 
+	stddev.valboot<-sd(as.vector(matrice.AS.boot$t)) 
 	vec.boot.res<-vector(length=7)
 	vec.boot.res[1]<-matrice.AS.boot$t0
 	vec.boot.res[2]<-s.moy.boot
@@ -38,7 +38,7 @@ function(matrix, verbose=FALSE, nrandom=NULL)
 	s.moy.boot<-mean(matrice.S.boot$t)
 	s.boot.corr<-2*matrice.S.boot$t0 - s.moy.boot
 	bias<-s.moy.boot-matrice.S.boot$t0
-	stddev.valboot<-sd(matrice.S.boot$t) 
+	stddev.valboot<-sd(as.vector(matrice.S.boot$t)) 
 	vec.boot.res<-vector(length=7)
 	vec.boot.res[1]<-matrice.S.boot$t0
 	vec.boot.res[2]<-s.moy.boot
@@ -83,7 +83,7 @@ function(matrix, verbose=FALSE, nrandom=NULL)
 
     duplicates<-sum(apply(X=matrix, MARGIN=2,FUN=duplicate))
 	richmoy<-mean(vec.rich)
-	richsd<-sd(vec.rich)
+	richsd<-sd(as.vector(vec.rich))
 	if(is.null(nrandom)==FALSE) {
 	    if(nrandom<10) {nrandom<-99 ; resboot<-bspf(matrix)
 	      resboot2<-data.frame(t(bspfm(matrix)),row.names = "")}

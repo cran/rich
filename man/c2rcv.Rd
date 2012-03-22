@@ -52,7 +52,7 @@ The observed difference between populations is included in the numerator and the
 
 \examples{
 data(efea)
-c2rcv(com1=efea$ef,com2=efea$ea,nrandom=49,tolerance=0.01,verbose=FALSE)
+c2rcv(com1=efea$ef,com2=efea$ea,nrandom=99,tolerance=0.01,verbose=FALSE)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

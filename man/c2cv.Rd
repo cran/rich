@@ -4,7 +4,7 @@
 
 \title{Comparison of 2 values of species richness using a randomization procedure}
 
-\description{Species richnesses are computed as the cumulative value over all samples. Richnesses are compared by means of a randomization test without controlling for differences of sampling regime or communities density.
+\description{Species richnesses are computed as the cumulative value over all samples. Richnesses are compared by mean of a randomization test without controlling for differences of sampling regime of communities density.
 
 }
 \usage{
@@ -52,7 +52,7 @@ The observed difference between populations is included in the numerator and the
 }
 \examples{
 data(efeb)
-c2cv(com1=efeb$ef,com2=efeb$eb,nrandom=49,verbose=FALSE)
+c2cv(com1=efeb$ef,com2=efeb$eb,nrandom=100,verbose=FALSE)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

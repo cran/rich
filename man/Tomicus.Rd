@@ -19,7 +19,7 @@
 Horn, A. (2006) Comparaison des distributions passee et presente de deux especes proches de scolytes, \emph{Tomicus piniperda} et \emph{T. Destruens} (Coleoptera: Scolytinae). These de l'Universite d'Orleans, France 180pp.}
 \examples{
 ## Comparing mean temperatures at sites where either T. destruens,
-## T. piniperda or both are present using c2m
+## T. piniperda or both are present using comp2mean
 data(Tomicus)
 c2m(pop1=Tomicus$destruens,pop2=Tomicus$piniperda,
 pop3=Tomicus$both, nrandom=99)

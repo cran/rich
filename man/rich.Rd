@@ -59,8 +59,8 @@ Jean-Pierre Rossi \email{jean-pierre.rossi@supagro.inra.fr}
 data(ef)
 # No bootstrap statistics
 rich(matrix=ef)
-# Bootstrap estimation based on 49 randomizations
-rich(matrix=ef, nrandom=49)
+# Bootstrap estimation based on 499 randomizations
+rich(matrix=ef, nrandom=499)
 }
 \keyword{ species richness }
 

@@ -6,7 +6,7 @@
 \description{
 Mean values of 2 populations are compared using a randomization procedure. Overlapping populations are allowed.}
 \usage{
-c2m(pop1,pop2,pop3=NULL,nrandom,pr1=0.025,pr2=0.975,verbose=TRUE)
+c2m(pop1, pop2,pop3=NULL,nrandom,pr1=0.025,pr2=0.975,verbose=TRUE)
 }
 \arguments{
   \item{pop1}{A vector with the observed values for population 1.}
@@ -21,7 +21,7 @@ c2m(pop1,pop2,pop3=NULL,nrandom,pr1=0.025,pr2=0.975,verbose=TRUE)
 Details are available in Manly (1997). In some cases, populations share some observed values: for example if we compare the mean annual temperature of sites where either species A or B is present and if A and B are sympatric in some localities (see example below). Those shared values are passed to \code{c2m} by the argument \code{pop3}.\cr
 If the mean value for population 1 \eqn{\ge} mean value for population 2, \code{p} is the number of randomizations for which the mean value for population 1 \eqn{\ge} mean value for population 2 divided by the number of randomizations + 1. 
 If the mean value for population 1 \eqn{\le} mean value for population 2, \code{p} is the number of randomizations for which the mean value for population 1 \eqn{\le} mean value for population 2 divided by the number of randomizations + 1.
-If mean value for population 1 \code{=} mean value for population 2 \code{p} in not computed (\code{p=NC}).
+If \eqn{mv1 = mv2} \code{p} in not computed (\code{p=NC}).
 }
 
 \value{
@@ -58,13 +58,13 @@ The observed difference between populations is included in the numerator and the
 # golden jackals from Manly (1997), p.4.
 males<-c(120, 107, 110, 116, 114, 111, 113, 117, 114, 112)
 females<-c(110, 111, 107, 108, 110, 105, 107, 106, 111, 111)
-c2m(pop1=males,pop2=females,nrandom=49)
+c2m(pop1=males,pop2=females,nrandom=99)
 
 # Maximum temperature in a set of sites where the beetle Tomicus destruens
 # or T. piniperda are present. Both species are present at 4 sites.
 data(Tomicus)
 c2m(pop1=Tomicus$destruens,pop2=Tomicus$piniperda, 
-pop3=Tomicus$both, nrandom=49)
+pop3=Tomicus$both, nrandom=99)
 
 # using c2m with outputs of rich
 a<-matrix(data=rpois(100,2), ncol=10, nrow=10)
@@ -74,7 +74,7 @@ nrandom=50,verbose=TRUE)
 y<-rich(matrix(data=rpois(30,0.5), ncol=5, nrow=6), 
 nrandom=50,verbose=TRUE)
 c2m(pop1=x$sumrow,pop2=y$sumrow,
-nrandom=49,verbose=FALSE)
+nrandom=100,verbose=FALSE)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

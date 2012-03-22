@@ -12,9 +12,6 @@ raref(matrix, dens, nrandom=99)
 }
 \item{nrandom}{\code{nrandom} is the number of a randomizations used in the bootstrap estimation. Values of \code{nrandom} <10 or NULL are set to 99.}
 }
-\details{
-\code{raref2} performs bootstrap that is resampling with replacement. This strategy was choosen because the variance among randomizations remains meaningful even at the right-hand of the accumulation curve. This condition is necessary, for example when one aims at comparing species richnesses.
-}
 \value{\code{raref} returns a list with two components.
 \item{rar}{A data frame with three columns giving the observed species richness for different sample size and corresponding density of individuals.}
 \item{Sinterp}{A vector with the term dens and the corresponding interpolated species richness.}
@@ -31,7 +28,7 @@ Jean-Pierre Rossi \email{jean-pierre.rossi@supagro.inra.fr}
 }
 \examples{
 data(ef)
-raref(ef, dens=1100, nrandom=49)
+raref(ef, dens=1100, nrandom=50)
 }
 \keyword{ rarefaction curve }
 \keyword{ rarefy }
