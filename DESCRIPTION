@@ -1,8 +1,7 @@
 Package: rich
-Type: Package
+Version: 0.3
+Date: 2012-221-11
 Title: Computes and compares species richnesses
-Version: 0.2
-Date: 2012-22-03
 Author: Jean-Pierre Rossi
 Maintainer: Jean-Pierre Rossi <jean-pierre.rossi@supagro.inra.fr>
 Depends: boot, vegan, permute
@@ -11,6 +10,6 @@ Description: Computes rarefaction curves, cumulated and mean species
         tests.
 License: GPL (>= 2)
 LazyLoad: yes
-Packaged: 2012-03-26 07:01:55 UTC; rossi
+Packaged: 2012-11-21 14:45:13 UTC; rossi
 Repository: CRAN
-Date/Publication: 2012-03-26 10:11:43
+Date/Publication: 2012-11-21 16:31:18

@@ -26,8 +26,8 @@
       \code{cr.bcorr }Mean of the bootstrap values corrected for the bias estimated below. \cr
       \code{cr.bias }Bias. \cr
       \code{cr.se }Standard error of the cumulative richness estimated by bootstrap. This is estimated as the standard deviation of the bootstrap values. \cr
-      \code{cr.lbn }Lower bound of the first order normal approximation confidence interval (see \code{\link{boot.ci} {boot}}). \cr
-      \code{cr.ubn }Upper bound of the first order normal approximation confidence interval (see \code{\link{boot.ci} {boot}}). \cr}
+      \code{cr.lbn }Lower bound of the first order normal approximation confidence interval (see \code{boot.ci {boot}}). \cr
+      \code{cr.ubn }Upper bound of the first order normal approximation confidence interval (see \code{boot.ci {boot}}). \cr}
 
 \item{bootMR }{A data frame showing the outputs of the bootstrap analyses of the mean richness (computed if \code{nrandom != FALSE}):\cr
       \code{mr.obs} Observed mean richness, equal to \code{mr} above. \cr
@@ -35,8 +35,8 @@
       \code{mr.bcorr }Mean of the bootstrap values corrected for the bias estimated below. \cr
       \code{mr.bias }Bias. \cr
       \code{mr.se }Standard error of the mean richness estimated by bootstrap. This is estimated as the standard deviation of the bootstrap values. \cr
-      \code{mr.lbn }Lower bound of the first order normal approximation confidence interval (see \code{\link{boot.ci} {boot}}). \cr
-      \code{mr.ubn }Upper bound of the first order normal approximation confidence interval (see \code{\link{boot.ci} {boot}}). \cr}
+      \code{mr.lbn }Lower bound of the first order normal approximation confidence interval (see \code{boot.ci {boot}}). \cr
+      \code{mr.ubn }Upper bound of the first order normal approximation confidence interval (see \code{boot.ci {boot}}). \cr}
 
 \item{nrandom }{Number of randomizations used in the bootstrap.}
 \item{richvec }{A vector containing the observed richness in each sample or populations. The mean of \code{richvec} corresponds to \code{mr} (available if \code{verbose == TRUE}).}

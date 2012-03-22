@@ -48,7 +48,7 @@ The observed difference between populations is included in the numerator and the
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-\code{\link{c2rcv}, \link{c2m}, \link{rich}}
+\code{\link{c2m}, \link{rich}}
 }
 \examples{
 data(efeb)

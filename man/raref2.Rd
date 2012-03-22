@@ -22,7 +22,7 @@ raref2(matrix, dens, tolerance, nrandom=99)
 Jean-Pierre Rossi \email{jean-pierre.rossi@supagro.inra.fr}
 }
 \seealso{
-\code{\link{raref}, \link{c2rcv}, \link{rich}}
+\code{\link{raref}, \link{rich}}
 }
 \examples{
 data(ef)

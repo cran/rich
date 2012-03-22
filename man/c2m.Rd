@@ -50,7 +50,7 @@ The observed difference between populations is included in the numerator and the
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-\code{\link{c2cv}, \link{c2rcv}, \link{rich}}
+\code{\link{c2cv}, \link{rich}}
 }
 
 \examples{
