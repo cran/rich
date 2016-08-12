@@ -1,7 +1,6 @@
 \name{c2m}
-\Rdversion{0.1}
 \alias{c2m}
-%- Also NEED an '\alias' for EACH other topic documented here.
+
 \title{Compares 2 mean values using a randomization test}
 \description{
 Mean values of 2 populations are compared using a randomization procedure. Overlapping populations are allowed.}
@@ -47,36 +46,55 @@ Jean-Pierre Rossi, <jean-pierre.rossi@supagro.inra.fr>
 The observed difference between populations is included in the numerator and the denominator when computing the probability \code{p}. This is justified because if the null hypothesis (there is no difference between populations) is true then the observed difference between populations is just another value for the randomization distribution (Manly, 1997, p. 7).
 }
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
 \seealso{
 \code{\link{c2cv}, \link{rich}}
 }
 
 \examples{
+
+\dontrun{
 # The example of mandible length of male and female 
 # golden jackals from Manly (1997), p.4.
 males<-c(120, 107, 110, 116, 114, 111, 113, 117, 114, 112)
 females<-c(110, 111, 107, 108, 110, 105, 107, 106, 111, 111)
-c2m(pop1=males,pop2=females,nrandom=99)
+out <- c2m(pop1=males, pop2=females, nrandom=99)
+out$res
+hist(out$rand)
+abline(v=out$res[3,1], col="red")
+abline(v=out$res[5,1], col="blue")
+abline(v=out$res[6,1], col="blue")
 
-# Maximum temperature in a set of sites where the beetle Tomicus destruens
+# Compare simulated datasets
+pop1<-rnorm(10)
+pop2<-rnorm(10)
+out <- c2m(pop1=pop1, pop2=pop2, nrandom=99)
+out$res
+hist(out$rand)
+abline(v=out$res[3,1], col="red")
+abline(v=out$res[5,1], col="blue")
+abline(v=out$res[6,1], col="blue")
+
+
+# Maximum temperature in a set of sites where the bark beetle Tomicus destruens
 # or T. piniperda are present. Both species are present at 4 sites.
 data(Tomicus)
-c2m(pop1=Tomicus$destruens,pop2=Tomicus$piniperda, 
+out <- c2m(pop1=Tomicus$destruens,pop2=Tomicus$piniperda, 
 pop3=Tomicus$both, nrandom=99)
+out$res
+hist(out$rand)
+abline(v=out$res[3,1], col="red")
+abline(v=out$res[5,1], col="blue")
+abline(v=out$res[6,1], col="blue")
 
 # using c2m with outputs of rich
-a<-matrix(data=rpois(100,2), ncol=10, nrow=10)
-b<-matrix(data=rpois(100,0.5), ncol=10, nrow=10)
-x<-rich(matrix(data=rpois(30,2), ncol=5, nrow=6), 
-nrandom=50,verbose=TRUE)
-y<-rich(matrix(data=rpois(30,0.5), ncol=5, nrow=6), 
-nrandom=50,verbose=TRUE)
-c2m(pop1=x$sumrow,pop2=y$sumrow,
-nrandom=100,verbose=FALSE)
-}
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ mean species richness }
-\keyword{ richness comparison }
+data(ef)
+o1 <- rich(matrix=ef, nrandom=99, verbose=TRUE)
+data(ea)
+o2 <- rich(matrix=ea, nrandom=99, verbose=TRUE)
+out <- c2m(pop1=o1$sumrow, pop2=o2$sumrow, nrandom=999, verbose=TRUE)
+hist(out$rand)
+abline(v=out$res[3,1], col="red")
+abline(v=out$res[5,1], col="blue")
+abline(v=out$res[6,1], col="blue")
+}}
+

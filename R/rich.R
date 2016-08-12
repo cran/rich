@@ -55,7 +55,6 @@ function(matrix, verbose=FALSE, nrandom=NULL)
 	names(vec.boot.res)<-c("cr.obs","cr.boot","cr.bcorr","cr.bias",
 				"cr.se","cr.lbn","cr.ubn")
     return(vec.boot.res)}
-	cat("computing...", "\n")
 	matrix<-as.matrix(matrix)
 	richcum<-SRobs(matrix)   
 	b<-as.vector(matrix) ; b[which(b>=1)]<-1

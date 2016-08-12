@@ -1,5 +1,4 @@
 \name{rich}
-\Rdversion{0.1}
 \alias{rich}
 \title{Species richness, their confidence interval and other useful  indices}
 \description{Computes the cumulative and average species richness over a set of samples, the associated bootstrap statistics and other useful indices.}
@@ -59,8 +58,10 @@ Jean-Pierre Rossi \email{jean-pierre.rossi@supagro.inra.fr}
 data(ef)
 # No bootstrap statistics
 rich(matrix=ef)
+
+\dontrun{
 # Bootstrap estimation based on 499 randomizations
-rich(matrix=ef, nrandom=499)
+rich(matrix=ef, nrandom=499)}
 }
-\keyword{ species richness }
+
 
